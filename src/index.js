@@ -1,3 +1,6 @@
+import { buildPage } from "./UI";
+export { WeatherData, getWeatherData };
+
 class WeatherData {
   constructor(city, region, country, temp_c, feels_like, humidity, wind) {
     this.city = city;
@@ -43,8 +46,20 @@ async function getWeatherData(location) {
     "https://api.weatherapi.com/v1/current.json?key=dacb5f83938943048bd02548231605&q=" +
       location
   );
-  const weatherData = await response.json();
-  console.log(weatherData);
+
+  const rawData = await response.json();
+
+  const weatherData = new WeatherData(
+    rawData.location.name,
+    rawData.location.region,
+    rawData.location.country,
+    rawData.current.temp_c,
+    rawData.current.feelslike_c,
+    rawData.current.humidity,
+    rawData.current.wind_kph
+  );
+
+  return weatherData;
 }
 
-getWeatherData("milton usa");
+buildPage();
