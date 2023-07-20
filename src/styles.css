@@ -12,6 +12,12 @@
     min-width: 600px;
 }
 
+.main {
+    padding: 60px;
+}
+
+
+
 /* Header */
 
 .header {
@@ -21,9 +27,9 @@
     background-color: #393f4d;
 }
 
-.main {
-    padding: 60px;
-}
+
+
+/* Search Input */
 
 .form {
     text-align: center;
@@ -64,4 +70,29 @@ input:focus {
 
 .search-btn:active {
     background-color: #407FC7;
+}
+
+
+
+/* Weather Card */
+
+.weather-card {
+    display: none;
+    max-width: 300px;
+    padding: 2rem;
+    border-radius: 5px;
+    margin: 4rem auto;
+    background-color: #393f4d;
+    color: #faf3e0;
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+    text-align: center;
+}
+
+h2 {
+   margin-top: 16px;
+   margin-bottom: 4px;
+}
+
+p {
+    margin-bottom: 4px;
 }
